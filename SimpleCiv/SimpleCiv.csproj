@@ -219,7 +219,7 @@
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties assets_4config_4unitsSchema_1json__JSONSchema="http://json-schema.org/draft-04/schema" />
+      <UserProperties assets_4config_4units_1json__JSONSchema="unitsSchema.json" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
