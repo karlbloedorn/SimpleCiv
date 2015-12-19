@@ -186,29 +186,24 @@ namespace SimpleCiv
             var unitsConfig = FileLoader.LoadTextFile("assets/config/units.json");
             var unitTypeList = JsonConvert.DeserializeObject<List<UnitDetail>>(unitsConfig);
 
-            int unitLimit = 2;
+            int unitLimit = 0;
             int unitIndex = 0;
             foreach(var unit in unitTypeList)
             {
-                if(unitIndex > unitLimit)
+                if(unitLimit != 0 && unitIndex > unitLimit)
                 {
                     break;
                 }
-              var t = UnitType.None;
-              if( Enum.TryParse(unit.name, out t))
+                if (unit.moveSound != null)
                 {
-                    unitTypes.Add(t, unit);
-
-                    if (unit.moveSound != null)
-                    {
-                        moveSounds.Add(t, fmod.CreateSound("assets/sounds/" + unit.moveSound, flags));
-                    }
-                    if (unit.attackSound != null)
-                    {
-                        attackSounds.Add(t, fmod.CreateSound("assets/sounds/" + unit.attackSound, flags));
-                    }
-                    unitIndex++;
+                    moveSounds.Add(unit.name, fmod.CreateSound("assets/sounds/" + unit.moveSound, flags));
                 }
+                if (unit.attackSound != null)
+                {
+                    attackSounds.Add(unit.name, fmod.CreateSound("assets/sounds/" + unit.attackSound, flags));
+                }
+                unitTypes.Add(unit.name, unit);
+                unitIndex++;
             }                            
          
             var aa = 0;

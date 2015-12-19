@@ -138,73 +138,279 @@
 	"singleUnit": true,
 	"name": "MechanizedInfantry"
 }, {
+=======
+[
+  {
+    "scaleSize": 0.4,
+    "objectFile": "units/archer/archer7.obj",
+    "singleUnit": false,
+    "role": "LandRanged",
+    "name": "Archer"
+  },
+  {
+    "scaleSize": 1.0,
+    "objectFile": "units/artillery/artillery1.obj",
+    "singleUnit": true,
+    "role": "LandRanged",
+    "name": "Artillery"
+  },
+  {
+    "scaleSize": 1.0,
+    "objectFile": "units/battleship/battleship01.obj",
+    "singleUnit": true,
+    "role": "NavalRanged",
+    "name": "Battleship"
+  },
+  {
+    "scaleSize": 1.0,
+    "objectFile": "units/bomber/bomber01.obj",
+    "singleUnit": true,
+    "role": "Air",
+    "name": "Bomber"
+  },
+  {
+    "scaleSize": 0.4,
+    "objectFile": "units/cavalry/cavalry01.obj",
+    "singleUnit": false,
+    "role": "Land",
+    "name": "Cavalry"
+  },
+  {
+    "scaleSize": 1.0,
+    "objectFile": "units/cannon/cannon.obj",
+    "singleUnit": true,
+    "role": "Siege",
+    "name": "Cannon"
+  },
+  {
+    "scaleSize": 1.0,
+    "objectFile": "units/caravan/caravan02.obj",
+    "singleUnit": true,
+    "role": "Land",
+    "name": "Caravan"
+  },
+  {
+    "scaleSize": 1.0,
+    "objectFile": "units/carrier/carrier01.obj",
+    "singleUnit": true,
+    "role": "Naval",
+    "name": "Carrier"
+  },
+  {
+    "scaleSize": 0.6,
+    "objectFile": "units/catapult/catapult.obj",
+    "singleUnit": true,
+    "role": "Siege",
+    "name": "Catapult"
+  },
+  {
+    "scaleSize": 0.4,
+    "objectFile": "units/chariot/chariot3.obj",
+    "singleUnit": false,
+    "role": "Land",
+    "name": "Chariot"
+  },
+  {
+    "scaleSize": 1.0,
+    "objectFile": "units/cruiser/cruiser01.obj",
+    "singleUnit": true,
+    "role": "Naval",
+    "name": "Cruiser"
+  },
+  {
+    "scaleSize": 1.0,
+    "objectFile": "units/destroyer/destroyer1.obj",
+    "singleUnit": true,
+    "role": "Naval",
+    "name": "Destroyer"
+  },
+  {
+    "scaleSize": 1.0,
+    "objectFile": "units/engineer/engineer1.obj",
+    "singleUnit": true,
+    "role": "Land",
+    "name": "Engineer"
+  },
+  {
+    "scaleSize": 0.4,
+    "objectFile": "units/explorer/explorer01.obj",
+    "singleUnit": false,
+    "role": "Land",
+    "name": "Explorer"
+  },
+  {
+    "scaleSize": 1.0,
+    "objectFile": "units/fighter/fighter.obj",
+    "singleUnit": true,
+    "role": "Air",
+    "name": "Fighter"
+  },
+  {
+    "scaleSize": 1.0,
+    "objectFile": "units/freight/freight_02.obj",
+    "singleUnit": true,
+    "role": "Land",
+    "name": "Freight"
+  },
+  {
+    "scaleSize": 1.0,
+    "objectFile": "units/frigate/frigate1.obj",
+    "singleUnit": true,
+    "role": "Naval",
+    "name": "Frigate"
+  },
+  {
+    "scaleSize": 1.0,
+    "objectFile": "units/galleon/galleon01.obj",
+    "singleUnit": true,
+    "role": "Naval",
+    "name": "Galleon"
+  },
+  {
+    "scaleSize": 0.4,
+    "objectFile": "units/rebel/partisan01.obj",
+    "singleUnit": false,
+    "role": "Land",
+    "name": "Rebel"
+  },
+  {
+    "scaleSize": 1.0,
+    "objectFile": "units/helicopter/helicopter02.obj",
+    "singleUnit": true,
+    "role": "Land",
+    "name": "Helicopter"
+  },
+  {
+    "scaleSize": 0.4,
+    "objectFile": "units/horseman/horseman02.obj",
+    "singleUnit": false,
+    "role": "Land",
+    "name": "Horseman"
+  },
+  {
+    "scaleSize": 1.0,
+    "objectFile": "units/howitzer/howitzer.obj",
+    "singleUnit": true,
+    "role": "Siege",
+    "name": "Howitzer"
+  },
+  {
+    "scaleSize": 1.0,
+    "objectFile": "units/ironclad/ironclad02.obj",
+    "singleUnit": true,
+    "role": "Naval",
+    "name": "Ironclad"
+  },
+  {
+    "scaleSize": 0.4,
+    "objectFile": "units/knight/knight03.obj",
+    "singleUnit": false,
+    "role": "Land",
+    "name": "Knight"
+  },
+  {
+    "scaleSize": 0.4,
+    "objectFile": "units/legion/legion4.obj",
+    "singleUnit": false,
+    "role": "Land",
+    "name": "Legion"
+  },
+  {
+    "scaleSize": 0.4,
+    "objectFile": "units/marines/marines01.obj",
+    "singleUnit": false,
+    "role": "Land",
+    "name": "Marines"
+  },
+  {
+    "name": "MechanizedInfantry",
+    "objectFile": "units/mechanizedinfrantry/mechinf.obj",
+    "role": "Land",
+    "scaleSize": 1.0,
+    "singleUnit": true
+  }, {
+>>>>>>> origin/master
 	"scaleSize": 0.4,
 	"objectFile":"units/musketeer/musketeer1.obj",
-	"singleUnit": false,
+    "singleUnit": false,
+    "role": "Land",
 	"name": "Musketeer"
 }, {
 	"scaleSize": 0.4,
 	"objectFile":"units/paratrooper/paratrooper01.obj",
-	"singleUnit": false,
+  "singleUnit": false,
+  "role": "Land",
 	"name": "Paratrooper"
 }, {
 	"scaleSize": 0.4,
 	"objectFile":"units/phalanx/phalanx6.obj",
-	"singleUnit": false,
+  "singleUnit": false,
+  "role": "Land",
 	"name": "Phalanx"
 }, {
 	"scaleSize": 0.4,
 	"objectFile":"units/pikeman/pikeman2.obj",
-	"singleUnit": false,
+  "singleUnit": false,
+  "role": "Land",
 	"name": "Pikeman"
 }, {
 	"scaleSize": 0.4,
 	"objectFile":"units/riflemen/riflemen02.obj",
-	"singleUnit": false,
+  "singleUnit": false,
+  "role": "Land",
 	"name": "Riflemen"
 }, {
 	"scaleSize": 0.4,
 	"objectFile":"units/settler/settler3.obj",
-	"singleUnit": true,
+  "singleUnit": true,
+  "role": "Land",
 	"name": "Settler"
 }, {
 	"scaleSize": 1.0,
 	"objectFile":"units/stealthbomber/stealth_bomber1.obj",
-	"singleUnit": true,
+  "singleUnit": true,
+  "role": "Air",
 	"name": "StealthBomber"
 }, {
 	"scaleSize": 1.0,
 	"objectFile":"units/stealthfighter/stealthfighter.obj",
-	"singleUnit": true,
+  "singleUnit": true,
+  "role": "Air",
 	"name": "StealthFighter"
 }, {
 	"scaleSize": 1.0,
 	"objectFile":"units/submarine/submarine.obj",
-	"singleUnit": true,
+  "singleUnit": true,
+  "role": "Naval",
 	"name": "Submarine"
 }, {
 	"scaleSize": 1.0,
 	"objectFile":"units/tank/armor.obj",
-	"singleUnit": true,
+  "singleUnit": true,
+  "role": "Land",
 	"name": "Tank"
 }, {
 	"scaleSize": 1.0,
 	"objectFile":"units/transport/transport.obj",
-	"singleUnit": true,
+  "singleUnit": true,
+  "role": "Land",
 	"name": "Transport"
 }, {
 	"scaleSize": 1.0,
 	"objectFile":"units/trimere/trimere02.obj",
-	"singleUnit": true,
+  "singleUnit": true,
+  "role": "Naval",
 	"name": "Trimere"
 }, {
 	"scaleSize": 0.4,
 	"objectFile":"units/warrior/warrior2.obj",
-	"singleUnit": false,
+  "singleUnit": false,
+  "role": "Land",
 	"name": "Warrior"
 }, {
 	"scaleSize": 0.4,
 	"objectFile":"units/worker/worker01.obj",
-	"singleUnit": false,
+  "singleUnit": false,
+  "role": "Land",
 	"name": "Worker"
 }]
