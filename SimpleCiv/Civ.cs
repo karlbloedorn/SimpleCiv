@@ -28,6 +28,11 @@ namespace SimpleCiv
     public partial class Civ : Form
     {
 
+        private nFMOD.FmodSystem fmod;
+        private const nFMOD.SoundMode flags = nFMOD.SoundMode.NonBlocking | nFMOD.SoundMode.SoftwareProcessing;
+        private Dictionary<UnitType, nFMOD.Sound> attackSounds;
+        private Dictionary<UnitType, nFMOD.Sound> moveSounds;
+
 
         //private const float MaxAngle = 0.523599f;
         private const float MaxAngle = 1.223599f;
@@ -70,8 +75,6 @@ namespace SimpleCiv
 
         public async void loaderThreadFunc()
         {
-
-
             await tileGeometry.Load();
             await gridGeometry.Load();
             await borderGeometry.Load();
@@ -120,10 +123,18 @@ namespace SimpleCiv
             lastFrameTicks = System.Environment.TickCount; // / TimeSpan.TicksPerMillisecond;
             InitializeComponent();
             this.topMenu1.CapitalName.Text = "Hey";
+            fmod = new nFMOD.FmodSystem();
+            fmod.Init(32, nFMOD.InitFlags.SoftwareHRTF);
+            //fmod.SetDspBufferSize(256, 2);
+            attackSounds = new Dictionary<UnitType, nFMOD.Sound>();
+            moveSounds = new Dictionary<UnitType, nFMOD.Sound>();
+
         }
 
         private void Civ_Load(object sender, EventArgs e)
         {
+
+
             var gl = overlayControl.OpenGL;
 
             while (true)
@@ -187,6 +198,15 @@ namespace SimpleCiv
               if( Enum.TryParse(unit.name, out t))
                 {
                     unitTypes.Add(t, unit);
+
+                    if (unit.moveSound != null)
+                    {
+                        moveSounds.Add(t, fmod.CreateSound("assets/sounds/" + unit.moveSound, flags));
+                    }
+                    if (unit.attackSound != null)
+                    {
+                        attackSounds.Add(t, fmod.CreateSound("assets/sounds/" + unit.attackSound, flags));
+                    }
                     unitIndex++;
                 }
             }                            
@@ -320,8 +340,7 @@ namespace SimpleCiv
             if (tileTypeFound != null)
             {
                 var clickedTile = world.tiles[tileX, tileZ];
-
-                /*
+                
                 if (MouseButtons.Left == MouseButtons)
                 {
                     clickedTile.owner = players[0];
@@ -331,7 +350,9 @@ namespace SimpleCiv
                     clickedTile.owner = null;
                 }
                 world.UpdateBorders();
-                */
+
+                return;
+                
                 if (MouseButtons.Left == MouseButtons)
                 {
                     /* foreach(var neighbors in clickedTile.neighbors)
@@ -382,6 +403,10 @@ namespace SimpleCiv
                                     var attacker = startTile.currentUnit;
                                     var defender = clickedTile.currentUnit;
 
+                                    if (attackSounds.ContainsKey(attacker.currentType)){
+                                        fmod.PlaySound(attackSounds[attacker.currentType]);
+                                    }
+
                                     Unit.EvaluateCombat(attacker, defender);
 
                                     if (defender.health <= 0)
@@ -408,6 +433,9 @@ namespace SimpleCiv
                                         clickedTile.currentUnit = startTile.currentUnit;
                                         clickedTile.currentUnit.currentTile = clickedTile;
                                         startTile.currentUnit = null;
+                                        if (moveSounds.ContainsKey(clickedTile.currentUnit.currentType)){
+                                            fmod.PlaySound(moveSounds[clickedTile.currentUnit.currentType]);
+                                        }
                                     }
                                 }
                             }
@@ -484,6 +512,7 @@ namespace SimpleCiv
 
             if (!setup)
             {
+
                 Setup(gl);
             }
 
@@ -531,7 +560,7 @@ namespace SimpleCiv
             lineProgram.SetUniformMatrix4(gl, "projectionMatrix", projectionMatrix.to_array());
             lineProgram.SetUniformMatrix4(gl, "viewMatrix", viewMatrix.to_array());
             lineProgram.SetUniform3(gl, "lineColor", 1.0f, 1.0f, 1.0f);
-            lineProgram.SetUniform1(gl, "lineAlpha", 0.3f);
+            lineProgram.SetUniform1(gl, "lineAlpha", 0.2f);
 
             for (int i = 0; i < world.xSize; i++)
             {
@@ -547,7 +576,6 @@ namespace SimpleCiv
                 }
             }
           
-
             if(startTile != null && startTile.currentUnit != null)
             {
                 lineProgram.SetUniform3(gl, "lineColor", 0.0f, 204.0f/255.0f, 1.0f);
@@ -557,11 +585,8 @@ namespace SimpleCiv
                 lineProgram.SetUniformMatrix4(gl, "modelMatrix", activeUnitModel.to_array());
                 gridGeometry.Draw(gl);
             }
-            
 
             lineProgram.Unbind(gl);
-
-
             unitProgram.Bind(gl);
             unitProgram.SetUniformMatrix4(gl, "projectionMatrix", projectionMatrix.to_array());
             unitProgram.SetUniformMatrix4(gl, "viewMatrix", viewMatrix.to_array());
@@ -598,79 +623,72 @@ namespace SimpleCiv
             }       
             unitProgram.Unbind(gl);
 
-            /*
-                borderProgram.Bind(gl);
+           
+            borderProgram.Bind(gl);
             borderProgram.SetUniformMatrix4(gl, "projectionMatrix", projectionMatrix.to_array());
             borderProgram.SetUniformMatrix4(gl, "viewMatrix", viewMatrix.to_array());
-            const float fadeWidth = 0.5f;
+
             var bordersGrouped = world.borders.GroupBy(x => x.type);
             foreach (var borderGroup in bordersGrouped)
             {
+                vec3 S0 = new vec3(0, 0, 0);
+                vec3 S1 = new vec3(0, 0, 0);
+              
                 switch (borderGroup.Key)
                 {
-                    case BorderType.Bottom:
-                        borderProgram.SetUniform3(gl, "gradientStart", 2.0f, 0, 1.0f);
-                        borderProgram.SetUniform3(gl, "gradientEnd", 2.0f, 0, 1 - fadeWidth);
-                        borderProgram.SetUniform3(gl, "cornerLocation", 2.0f,0,0);                        
+                    case BorderType.DownRight:
+                        S0 = borderGeometry.v1;
+                        S1 = borderGeometry.v2;
                         break;
-                    case BorderType.Top:
-                        borderProgram.SetUniform3(gl, "gradientStart", 2.0f, 0, 0.0f);
-                        borderProgram.SetUniform3(gl, "gradientEnd", 2.0f, 0, fadeWidth);
-                        borderProgram.SetUniform3(gl, "cornerLocation", 2.0f, 0, 0);
+                    case BorderType.DownLeft:
+                        S0 = borderGeometry.v2;
+                        S1 = borderGeometry.v3;
                         break;
                     case BorderType.Left:
-                        borderProgram.SetUniform3(gl, "gradientStart", 0, 0, 2.0f);
-                        borderProgram.SetUniform3(gl, "gradientEnd", fadeWidth, 0, 2.0f);
-                        borderProgram.SetUniform3(gl, "cornerLocation", 2.0f, 0, 0);
+                        S0 = borderGeometry.v3;
+                        S1 = borderGeometry.v4;
+                        break;
+                    case BorderType.UpLeft:
+                        S0 = borderGeometry.v4;
+                        S1 = borderGeometry.v5;
+                        break;
+                    case BorderType.UpRight:
+                        S0 = borderGeometry.v5;
+                        S1 = borderGeometry.v6;
                         break;
                     case BorderType.Right:
-                        borderProgram.SetUniform3(gl, "gradientStart", 1.0f, 0, 2.0f);
-                        borderProgram.SetUniform3(gl, "gradientEnd", 1 - fadeWidth, 0, 2.0f);
-                        borderProgram.SetUniform3(gl, "cornerLocation", 2.0f, 0, 0);
+                        S0 = borderGeometry.v6;
+                        S1 = borderGeometry.v1;
                         break;
-                    case BorderType.TopRight:
-                        borderProgram.SetUniform3(gl, "gradientStart", 2.0f, 0, 2.0f);
-                        borderProgram.SetUniform3(gl, "gradientEnd", 2.0f, 0, 2.0f);
-                        borderProgram.SetUniform3(gl, "cornerLocation", 1.0f, 0, 0.0f);
-                        break;
-                    case BorderType.TopLeft:
-                        borderProgram.SetUniform3(gl, "gradientStart", 2.0f, 0, 2.0f);
-                        borderProgram.SetUniform3(gl, "gradientEnd", 2.0f, 0, 2.0f);
-                        borderProgram.SetUniform3(gl, "cornerLocation", 0.0f, 0, 0.0f);
-                        break;
-                    case BorderType.BottomRight:
-                        borderProgram.SetUniform3(gl, "gradientStart", 2.0f, 0, 2.0f);
-                        borderProgram.SetUniform3(gl, "gradientEnd", 2.0f, 0, 2.0f);
-                        borderProgram.SetUniform3(gl, "cornerLocation", 1.0f, 0, 1.0f);
-                        break;
-                    case BorderType.BottomLeft:
-                        borderProgram.SetUniform3(gl, "gradientStart", 2.0f, 0, 2.0f);
-                        borderProgram.SetUniform3(gl, "gradientEnd", 2.0f, 0, 2.0f);
-                        borderProgram.SetUniform3(gl, "cornerLocation", 0.0f, 0, 1.0f);
-                        break;
+                    default:
+                        continue;
                 }
-                foreach(var border in borderGroup)
+                borderProgram.SetUniform3(gl, "S0", S0.x, 0.003f, S0.z);
+                borderProgram.SetUniform3(gl, "S1", S1.x, 0.003f, S1.z);
+
+                foreach (var border in borderGroup)
                 {
-                    var translated = glm.translate(mat4.identity(), new vec3(border.tile.xPos, 0, border.tile.zPos));
-                    borderProgram.SetUniformMatrix4(gl, "modelMatrix", translated.to_array());
+                    var borderModel = glm.translate(mat4.identity(), new vec3(border.tile.centerPos.x, 0.003f, border.tile.centerPos.z));
+                    borderProgram.SetUniformMatrix4(gl, "modelMatrix", borderModel.to_array());
                     borderProgram.SetUniform3(gl, "borderColor", border.tile.owner.borderColor.R / 255.0f, border.tile.owner.borderColor.G / 255.0f, border.tile.owner.borderColor.B / 255.0f);
-                    borderGeometry.Draw(gl);                   
+                    borderGeometry.Draw(gl,Convert.ToInt32( borderGroup.Key));                   
                 }
             }
             borderProgram.Unbind(gl);
-            */
 
             double[] curX = new double[] { 0.0 };
             double[] curY = new double[] { 0.0 };
             double[] curZ = new double[] { 0.0 };
 
-           /* gl.Project(5, 0, 5, Array.ConvertAll<float, double>(viewMatrix.to_array(), Convert.ToDouble),
-                    Array.ConvertAll<float, double>(projectionMatrix.to_array(), Convert.ToDouble), new int[] { 0, 0, (int)overlayControl.Width, (int)overlayControl.Height },
-                    curX,
-                    curY,
-                    curZ);*/
+            /* gl.Project(5, 0, 5, Array.ConvertAll<float, double>(viewMatrix.to_array(), Convert.ToDouble),
+                     Array.ConvertAll<float, double>(projectionMatrix.to_array(), Convert.ToDouble), new int[] { 0, 0, (int)overlayControl.Width, (int)overlayControl.Height },
+                     curX,
+                     curY,
+                     curZ);*/
 
             //this.elementHost3.Location = new Point((int)curX[0], overlayControl.Height - (int)curY[0]);
+
+            fmod.Update();
 
         }
 

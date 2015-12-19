@@ -178,59 +178,12 @@ namespace SimpleCiv.world
                         var curNeighbor = neighborItem;
                         if (curNeighbor.tile.owner != currentTile.owner)
                         {
-                            if (curNeighbor.tile.xPos == currentTile.xPos || curNeighbor.tile.zPos == currentTile.zPos)
-                            {
-                                // tile is not a diag neighbor.
-                                // this is a border.
-                                var b = new Border();
-                                b.owner = currentTile.owner;
-                                b.tile = currentTile;
-                                b.type = curNeighbor.borderType;
-                                borders.Add(b);
-                            }
-                            else
-                            {
-                                /*
-                                Neighbor top;
-                                Neighbor bottom;
-                                Neighbor right;
-                                Neighbor left;
-
-                                currentTile.neighborsDict.TryGetValue(BorderType.Top, out top);
-                                currentTile.neighborsDict.TryGetValue(BorderType.Right, out right);
-                                currentTile.neighborsDict.TryGetValue(BorderType.Bottom, out bottom);
-                                currentTile.neighborsDict.TryGetValue(BorderType.Left, out left);
-                                */
-
-                                var include = false;
-                                /*
-                                switch (curNeighbor.borderType)
-                                {
-                                    case BorderType.TopRight:
-                                        include = (top != null && top.tile.owner == currentTile.owner) && (right != null && right.tile.owner == currentTile.owner);
-                                        break;
-                                    case BorderType.TopLeft:
-                                        include = (top != null && top.tile.owner == currentTile.owner) && (left != null && left.tile.owner == currentTile.owner);
-                                        break;
-                                    case BorderType.BottomRight:
-                                        include = (bottom != null && bottom.tile.owner == currentTile.owner) && (right != null && right.tile.owner == currentTile.owner);
-                                        break;
-                                    case BorderType.BottomLeft:
-                                        include = (bottom != null && bottom.tile.owner == currentTile.owner) && (left != null && left.tile.owner == currentTile.owner);
-                                        break;
-                                }*/
-
-                                if (include)
-                                {
-                                    var b = new Border();
-                                    b.owner = currentTile.owner;
-                                    b.tile = currentTile;
-                                    b.type = curNeighbor.borderType;
-                                    borders.Add(b);
-                                }
-                            }
+                            var b = new Border();
+                            b.owner = currentTile.owner;
+                            b.tile = currentTile;
+                            b.type = curNeighbor.borderType;
+                            borders.Add(b);
                         }
-
                     }
                 }
             }

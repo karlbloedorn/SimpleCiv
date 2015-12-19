@@ -12,5 +12,7 @@ namespace SimpleCiv.world
         public float scaleSize;
         public bool singleUnit;
         public string name;
+        public string attackSound;
+        public string moveSound;
     }
 }

@@ -46,6 +46,10 @@
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="nFMOD, Version=1.0.5219.31901, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\nFMOD.0.6\lib\net20\nFMOD.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="SharpGL, Version=2.4.0.0, Culture=neutral, PublicKeyToken=27fc851303210b27, processorArchitecture=MSIL">
@@ -115,6 +119,9 @@
     <Compile Include="world\UnitDetail.cs" />
     <Compile Include="world\UnitGeometry.cs" />
     <Compile Include="world\World.cs" />
+    <Content Include="assets\sounds\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="assets\textures\deepwater.bmp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

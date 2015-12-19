@@ -2,7 +2,8 @@
 	"scaleSize": 0.4,
 	"objectFile": "units/archer/archer7.obj",
 	"singleUnit": false,
-	"name": "Archer"
+  "name": "Archer",
+    "attackSound" :  "shoot.ogg"
 }, {
 	"scaleSize": 1.0,
 	"objectFile":"units/artillery/artillery1.obj",
@@ -91,13 +92,15 @@
 }, {
 	"scaleSize": 0.4,
 	"objectFile":"units/rebel/partisan01.obj",
-	"singleUnit": false,
+  "singleUnit": false,
+  "attackSound" :  "C_34P.wav",
 	"name": "Rebel"
 }, {
 	"scaleSize": 1.0,
 	"objectFile":"units/helicopter/helicopter02.obj",
 	"singleUnit": true,
-	"name": "Helicopter"
+  "name": "Helicopter",
+  "moveSound" :  "helicopter.mp3"
 }, {
 	"scaleSize": 0.4,
 	"objectFile":"units/horseman/horseman02.obj",
@@ -117,7 +120,8 @@
 	"scaleSize": 0.4,
 	"objectFile":"units/knight/knight03.obj",
 	"singleUnit": false,
-	"name": "Knight"
+  "name": "Knight",
+  "attackSound" :  "Socapex - Swordsmall_1.wav"
 }, {
 	"scaleSize": 0.4,
 	"objectFile":"units/legion/legion4.obj",
