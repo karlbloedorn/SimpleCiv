@@ -1,0 +1,30 @@
+# Blender MTL File: 'artillery1.blend'
+# Material Count: 3
+
+newmtl barrel
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.019263 0.028828 0.018856
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl cannon_ball
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.005234 0.005234 0.005234
+Ks 0.666667 0.666667 0.666667
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl metal
+Ns 107.843137
+Ka 0.000000 0.000000 0.000000
+Kd 0.090342 0.138680 0.085731
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Bump C:\\Users\\Karl\\Documents\\Visual Studio 2015\\Projects\\TestSharpDX\\TestSharpDX\\assets\\Pictures\\texture_cd\\texture\\metal\\steel1_cyc.jpg

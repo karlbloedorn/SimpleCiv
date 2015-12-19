@@ -1,0 +1,96 @@
+# Blender MTL File: 'legion4.blend'
+# Material Count: 10
+
+newmtl armor_upper_leg
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.095417 0.057206 0.019041
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl belt
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.141860 0.036620 0.000000
+Ks 0.043860 0.043860 0.043860
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl clothes
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.068395 0.069709 0.068723
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl helmet
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.519995 0.460456 0.000000
+Ks 0.037037 0.037037 0.037037
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl helmet_top
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.102588 0.045421 0.000000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl roupa_player
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Bump C:\\Users\\Karl\\Documents\\Visual Studio 2015\\Projects\\TestSharpDX\\TestSharpDX\\Desktop\\textura anjo\\ROUPA-NM.png
+map_Kd C:\\Users\\Karl\\Documents\\Visual Studio 2015\\Projects\\TestSharpDX\\TestSharpDX\\Desktop\\textura anjo\\ROUPA-DM.png
+map_Ks C:\\Users\\Karl\\Documents\\Visual Studio 2015\\Projects\\TestSharpDX\\TestSharpDX\\Desktop\\textura anjo\\ROUPA-SM.png
+map_Ns C:\\Users\\Karl\\Documents\\Visual Studio 2015\\Projects\\TestSharpDX\\TestSharpDX\\Desktop\\textura anjo\\ROUPA-SM.png
+
+newmtl shield
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.752302 0.044289 0.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl shield_center
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.696429 0.696429 0.696429
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl skin_player
+Ns 56.862745
+Ka 0.000000 0.000000 0.000000
+Kd 0.658375 0.520996 0.396755
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl sword
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.308625 0.574340 0.640000
+Ks 0.446429 0.446429 0.446429
+Ni 1.000000
+d 1.000000
+illum 2

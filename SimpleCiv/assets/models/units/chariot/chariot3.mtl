@@ -1,0 +1,140 @@
+# Blender MTL File: 'chariot3.blend'
+# Material Count: 15
+
+newmtl None
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+
+newmtl armor_upper_leg
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.267453 0.160347 0.053372
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl belt
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.141860 0.036620 0.000000
+Ks 0.043860 0.043860 0.043860
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl chariot_outline
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.000000 0.015803
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl clothes
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.068395 0.069709 0.068723
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl helmet
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.519995 0.460456 0.000000
+Ks 0.037037 0.037037 0.037037
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl helmet_top
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.293784 0.000000 0.020658
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl hoof
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.023278 0.022016 0.020776
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl horse_body
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.035064 0.024144 0.017261
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl lightwood
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.161235 0.181262 0.103886
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl rim
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.580101 0.748557 0.800000
+Ks 0.200000 0.200000 0.200000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl roupa_player
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Bump C:\\Users\\Karl\\Documents\\Visual Studio 2015\\Projects\\TestSharpDX\\TestSharpDX\\Desktop\\textura anjo\\ROUPA-NM.png
+map_Kd C:\\Users\\Karl\\Documents\\Visual Studio 2015\\Projects\\TestSharpDX\\TestSharpDX\\Desktop\\textura anjo\\ROUPA-DM.png
+map_Ks C:\\Users\\Karl\\Documents\\Visual Studio 2015\\Projects\\TestSharpDX\\TestSharpDX\\Desktop\\textura anjo\\ROUPA-SM.png
+map_Ns C:\\Users\\Karl\\Documents\\Visual Studio 2015\\Projects\\TestSharpDX\\TestSharpDX\\Desktop\\textura anjo\\ROUPA-SM.png
+
+newmtl skin_player
+Ns 56.862745
+Ka 0.000000 0.000000 0.000000
+Kd 0.658375 0.520996 0.396755
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl tail
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.321568 0.161137 0.103070
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl wood
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.044921 0.026584 0.009260
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1

@@ -1,0 +1,20 @@
+# Blender MTL File: 'stealthfighter.blend'
+# Material Count: 2
+
+newmtl body
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.287326 0.327007 0.366018
+Ks 0.007353 0.007353 0.007353
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl tinted_glass
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1

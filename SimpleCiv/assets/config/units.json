@@ -1,0 +1,206 @@
+[{
+	"scaleSize": 0.4,
+	"objectFile": "units/archer/archer7.obj",
+	"singleUnit": false,
+	"name": "Archer"
+}, {
+	"scaleSize": 1.0,
+	"objectFile":"units/artillery/artillery1.obj",
+	"singleUnit": true,
+	"name": "Artillery"
+}, {
+	"scaleSize": 1.0,
+	"objectFile":"units/battleship/battleship01.obj",
+	"singleUnit": true,
+	"name": "Battleship"
+}, {
+	"scaleSize": 1.0,
+	"objectFile":"units/bomber/bomber01.obj",
+	"singleUnit": true,
+	"name": "Bomber"
+}, {
+	"scaleSize": 0.4,
+	"objectFile":"units/cavalry/cavalry01.obj",
+	"singleUnit": false,
+	"name": "Cavalry"
+}, {
+	"scaleSize": 1.0,
+	"objectFile":"units/cannon/cannon.obj",
+	"singleUnit": true,
+	"name": "Cannon"
+}, {
+	"scaleSize": 1.0,
+	"objectFile":"units/caravan/caravan02.obj",
+	"singleUnit": true,
+	"name": "Caravan"
+}, {
+	"scaleSize": 1.0,
+	"objectFile":"units/carrier/carrier01.obj",
+	"singleUnit": true,
+	"name": "Carrier"
+}, {
+	"scaleSize": 0.6,
+	"objectFile":"units/catapult/catapult.obj",
+	"singleUnit": true,
+	"name": "Catapult"
+}, {
+	"scaleSize": 0.4,
+	"objectFile":"units/chariot/chariot3.obj",
+	"singleUnit": false,
+	"name": "Chariot"
+}, {
+	"scaleSize": 1.0,
+	"objectFile":"units/cruiser/cruiser01.obj",
+	"singleUnit": true,
+	"name": "Cruiser"
+}, {
+	"scaleSize": 1.0,
+	"objectFile":"units/destroyer/destroyer1.obj",
+	"singleUnit": true,
+	"name": "Destroyer"
+}, {
+	"scaleSize": 1.0,
+	"objectFile":"units/engineer/engineer1.obj",
+	"singleUnit": true,
+	"name": "Engineer"
+}, {
+	"scaleSize": 0.4,
+	"objectFile":"units/explorer/explorer01.obj",
+	"singleUnit": false,
+	"name": "Explorer"
+}, {
+	"scaleSize": 1.0,
+	"objectFile":"units/fighter/fighter.obj",
+	"singleUnit": true,
+	"name": "Fighter"
+}, {
+	"scaleSize": 1.0,
+	"objectFile":"units/freight/freight_02.obj",
+	"singleUnit": true,
+	"name": "Freight"
+}, {
+	"scaleSize": 1.0,
+	"objectFile":"units/frigate/frigate1.obj",
+	"singleUnit": true,
+	"name": "Frigate"
+}, {
+	"scaleSize": 1.0,
+	"objectFile":"units/galleon/galleon01.obj",
+	"singleUnit": true,
+	"name": "Galleon"
+}, {
+	"scaleSize": 0.4,
+	"objectFile":"units/rebel/partisan01.obj",
+	"singleUnit": false,
+	"name": "Rebel"
+}, {
+	"scaleSize": 1.0,
+	"objectFile":"units/helicopter/helicopter02.obj",
+	"singleUnit": true,
+	"name": "Helicopter"
+}, {
+	"scaleSize": 0.4,
+	"objectFile":"units/horseman/horseman02.obj",
+	"singleUnit": false,
+	"name": "Horseman"
+}, {
+	"scaleSize": 1.0,
+	"objectFile":"units/howitzer/howitzer.obj",
+	"singleUnit": true,
+	"name": "Howitzer"
+}, {
+	"scaleSize": 1.0,
+	"objectFile":"units/ironclad/ironclad02.obj",
+	"singleUnit": true,
+	"name": "Ironclad"
+}, {
+	"scaleSize": 0.4,
+	"objectFile":"units/knight/knight03.obj",
+	"singleUnit": false,
+	"name": "Knight"
+}, {
+	"scaleSize": 0.4,
+	"objectFile":"units/legion/legion4.obj",
+	"singleUnit": false,
+	"name": "Legion"
+}, {
+	"scaleSize": 0.4,
+	"objectFile":"units/marines/marines01.obj",
+	"singleUnit": false,
+	"name": "Marines"
+}, {
+	"scaleSize": 1.0,
+	"objectFile":"units/mechanizedinfrantry/mechinf.obj",
+	"singleUnit": true,
+	"name": "MechanizedInfantry"
+}, {
+	"scaleSize": 0.4,
+	"objectFile":"units/musketeer/musketeer1.obj",
+	"singleUnit": false,
+	"name": "Musketeer"
+}, {
+	"scaleSize": 0.4,
+	"objectFile":"units/paratrooper/paratrooper01.obj",
+	"singleUnit": false,
+	"name": "Paratrooper"
+}, {
+	"scaleSize": 0.4,
+	"objectFile":"units/phalanx/phalanx6.obj",
+	"singleUnit": false,
+	"name": "Phalanx"
+}, {
+	"scaleSize": 0.4,
+	"objectFile":"units/pikeman/pikeman2.obj",
+	"singleUnit": false,
+	"name": "Pikeman"
+}, {
+	"scaleSize": 0.4,
+	"objectFile":"units/riflemen/riflemen02.obj",
+	"singleUnit": false,
+	"name": "Riflemen"
+}, {
+	"scaleSize": 0.4,
+	"objectFile":"units/settler/settler3.obj",
+	"singleUnit": true,
+	"name": "Settler"
+}, {
+	"scaleSize": 1.0,
+	"objectFile":"units/stealthbomber/stealth_bomber1.obj",
+	"singleUnit": true,
+	"name": "StealthBomber"
+}, {
+	"scaleSize": 1.0,
+	"objectFile":"units/stealthfighter/stealthfighter.obj",
+	"singleUnit": true,
+	"name": "StealthFighter"
+}, {
+	"scaleSize": 1.0,
+	"objectFile":"units/submarine/submarine.obj",
+	"singleUnit": true,
+	"name": "Submarine"
+}, {
+	"scaleSize": 1.0,
+	"objectFile":"units/tank/armor.obj",
+	"singleUnit": true,
+	"name": "Tank"
+}, {
+	"scaleSize": 1.0,
+	"objectFile":"units/transport/transport.obj",
+	"singleUnit": true,
+	"name": "Transport"
+}, {
+	"scaleSize": 1.0,
+	"objectFile":"units/trimere/trimere02.obj",
+	"singleUnit": true,
+	"name": "Trimere"
+}, {
+	"scaleSize": 0.4,
+	"objectFile":"units/warrior/warrior2.obj",
+	"singleUnit": false,
+	"name": "Warrior"
+}, {
+	"scaleSize": 0.4,
+	"objectFile":"units/worker/worker01.obj",
+	"singleUnit": false,
+	"name": "Worker"
+}]

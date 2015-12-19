@@ -1,0 +1,39 @@
+# Blender MTL File: 'fighter.blend'
+# Material Count: 4
+
+newmtl body
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.210781 0.267098 0.293784
+Ks 0.021469 0.024250 0.022603
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\Karl\\Documents\\Visual Studio 2015\\Projects\\TestSharpDX\\TestSharpDX\\assets\\raw\\Pictures\\freeciv\\fighterbody.png
+
+newmtl front
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.003916 0.003916 0.003916
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl glass
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.107278 0.172530 0.179394
+Ks 0.174242 0.174242 0.174242
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl propeller
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.014549 0.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2

@@ -1,0 +1,105 @@
+# Blender MTL File: 'phalanx6.blend'
+# Material Count: 11
+
+newmtl armor_torso
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.430572 0.014855 0.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl armor_upper_leg
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.095417 0.057206 0.019041
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl clothes
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.720953 0.000000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl helmet
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.506446 0.519995 0.231618
+Ks 0.037037 0.037037 0.037037
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl helmet_top
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.028997 0.000000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl roupa_player
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Bump C:\\Users\\Karl\\Documents\\Visual Studio 2015\\Projects\\TestSharpDX\\TestSharpDX\\Desktop\\textura anjo\\ROUPA-NM.png
+map_Kd C:\\Users\\Karl\\Documents\\Visual Studio 2015\\Projects\\TestSharpDX\\TestSharpDX\\Desktop\\textura anjo\\ROUPA-DM.png
+map_Ks C:\\Users\\Karl\\Documents\\Visual Studio 2015\\Projects\\TestSharpDX\\TestSharpDX\\Desktop\\textura anjo\\ROUPA-SM.png
+map_Ns C:\\Users\\Karl\\Documents\\Visual Studio 2015\\Projects\\TestSharpDX\\TestSharpDX\\Desktop\\textura anjo\\ROUPA-SM.png
+
+newmtl shield
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.008096 0.125943
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl shield__rings
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.788686 0.754745
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl skin_player
+Ns 56.862745
+Ka 0.000000 0.000000 0.000000
+Kd 0.658375 0.520996 0.396755
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl spearhead
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.779084 0.368033
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl sspear_handle
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.011735 0.002838 0.000000
+Ks 0.009259 0.009259 0.009259
+Ni 1.000000
+d 1.000000
+illum 2

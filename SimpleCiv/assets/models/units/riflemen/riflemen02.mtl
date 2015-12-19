@@ -1,0 +1,104 @@
+# Blender MTL File: 'riflemen02.blend'
+# Material Count: 11
+
+newmtl backpack
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.017384 0.017582 0.003624
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl barrel_metal
+Ns 107.843137
+Ka 0.000000 0.000000 0.000000
+Kd 0.029926 0.029926 0.029926
+Ks 0.617394 0.617394 0.617394
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump C:\\Users\\Karl\\Documents\\Visual Studio 2015\\Projects\\TestSharpDX\\TestSharpDX\\assets\\Pictures\\texture_cd\\texture\\metal\\steel1_cyc.jpg
+
+newmtl hat.001
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.117847 0.111610 0.050263
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl jacket
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.254825 0.232845 0.102535
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl pants
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.037208 0.041772 0.011981
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl pocket
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.128898 0.152138 0.034747
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl shirt
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.037165 0.058586 0.023218
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+
+newmtl shoes
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.035216 0.006017 0.000000
+Ks 0.070175 0.070175 0.070175
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl skin_player
+Ns 56.862745
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 0.791336 0.602628
+Ks 0.163636 0.163636 0.163636
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl trigger
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.001650 0.001604 0.000808
+Ks 0.830357 0.788860 0.394053
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl wood
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.105539 0.105539 0.105539
+Ks 0.725094 0.725094 0.725094
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump C:\\Users\\Karl\\Documents\\Visual Studio 2015\\Projects\\TestSharpDX\\TestSharpDX\\assets\\Pictures\\texture_cd\\texture\\wood\\woodbeige.jpg
+map_Kd C:\\Users\\Karl\\Documents\\Visual Studio 2015\\Projects\\TestSharpDX\\TestSharpDX\\assets\\Pictures\\texture_cd\\texture\\wood\\woodbeige.jpg
