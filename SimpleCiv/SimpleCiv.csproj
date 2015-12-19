@@ -115,7 +115,7 @@
     <Compile Include="world\UnitDetail.cs" />
     <Compile Include="world\UnitGeometry.cs" />
     <Compile Include="world\World.cs" />
-    <None Include="assets\config\unitSchema.json" />
+    <None Include="assets\config\unitsSchema.json" />
     <Content Include="assets\textures\deepwater.bmp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -219,7 +219,7 @@
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties assets_4config_4units_1json__JSONSchema="UnitSchema.json" assets_4config_4unitSchema_1json__JSONSchema="http://json-schema.org/draft-04/schema" />
+      <UserProperties assets_4config_4unitsSchema_1json__JSONSchema="http://json-schema.org/draft-04/schema" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
