@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 namespace SimpleCiv.world
 { 
 
-
     public enum UnitType
     {
         None,

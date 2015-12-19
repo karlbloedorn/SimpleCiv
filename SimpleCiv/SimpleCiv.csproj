@@ -115,6 +115,7 @@
     <Compile Include="world\UnitDetail.cs" />
     <Compile Include="world\UnitGeometry.cs" />
     <Compile Include="world\World.cs" />
+    <None Include="assets\config\unitsSchema.json" />
     <Content Include="assets\textures\deepwater.bmp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -216,6 +217,11 @@
     <PostBuildEvent>
     </PostBuildEvent>
   </PropertyGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties assets_4config_4units_1json__JSONSchema="unitsSchema.json" />
+    </VisualStudio>
+  </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
