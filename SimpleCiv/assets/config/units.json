@@ -188,88 +188,103 @@
     "role": "Land",
     "scaleSize": 1.0,
     "singleUnit": true
-  }, {
-	"scaleSize": 0.4,
-	"objectFile":"units/musketeer/musketeer1.obj",
+  },
+  {
+    "scaleSize": 0.4,
+    "objectFile": "units/musketeer/musketeer1.obj",
     "singleUnit": false,
     "role": "Land",
-	"name": "Musketeer"
-}, {
-	"scaleSize": 0.4,
-	"objectFile":"units/paratrooper/paratrooper01.obj",
-  "singleUnit": false,
-  "role": "Land",
-	"name": "Paratrooper"
-}, {
-	"scaleSize": 0.4,
-	"objectFile":"units/phalanx/phalanx6.obj",
-  "singleUnit": false,
-  "role": "Land",
-	"name": "Phalanx"
-}, {
-	"scaleSize": 0.4,
-	"objectFile":"units/pikeman/pikeman2.obj",
-  "singleUnit": false,
-  "role": "Land",
-	"name": "Pikeman"
-}, {
-	"scaleSize": 0.4,
-	"objectFile":"units/riflemen/riflemen02.obj",
-  "singleUnit": false,
-  "role": "Land",
-	"name": "Riflemen"
-}, {
-	"scaleSize": 0.4,
-	"objectFile":"units/settler/settler3.obj",
-  "singleUnit": true,
-  "role": "Land",
-	"name": "Settler"
-}, {
-	"scaleSize": 1.0,
-	"objectFile":"units/stealthbomber/stealth_bomber1.obj",
-  "singleUnit": true,
-  "role": "Air",
-	"name": "StealthBomber"
-}, {
-	"scaleSize": 1.0,
-	"objectFile":"units/stealthfighter/stealthfighter.obj",
-  "singleUnit": true,
-  "role": "Air",
-	"name": "StealthFighter"
-}, {
-	"scaleSize": 1.0,
-	"objectFile":"units/submarine/submarine.obj",
-  "singleUnit": true,
-  "role": "Naval",
-	"name": "Submarine"
-}, {
-	"scaleSize": 1.0,
-	"objectFile":"units/tank/armor.obj",
-  "singleUnit": true,
-  "role": "Land",
-	"name": "Tank"
-}, {
-	"scaleSize": 1.0,
-	"objectFile":"units/transport/transport.obj",
-  "singleUnit": true,
-  "role": "Land",
-	"name": "Transport"
-}, {
-	"scaleSize": 1.0,
-	"objectFile":"units/trimere/trimere02.obj",
-  "singleUnit": true,
-  "role": "Naval",
-	"name": "Trimere"
-}, {
-	"scaleSize": 0.4,
-	"objectFile":"units/warrior/warrior2.obj",
-  "singleUnit": false,
-  "role": "Land",
-	"name": "Warrior"
-}, {
-	"scaleSize": 0.4,
-	"objectFile":"units/worker/worker01.obj",
-  "singleUnit": false,
-  "role": "Land",
-	"name": "Worker"
-}]
+    "name": "Musketeer"
+  },
+  {
+    "scaleSize": 0.4,
+    "objectFile": "units/paratrooper/paratrooper01.obj",
+    "singleUnit": false,
+    "role": "Land",
+    "name": "Paratrooper"
+  },
+  {
+    "scaleSize": 0.4,
+    "objectFile": "units/phalanx/phalanx6.obj",
+    "singleUnit": false,
+    "role": "Land",
+    "name": "Phalanx"
+  },
+  {
+    "scaleSize": 0.4,
+    "objectFile": "units/pikeman/pikeman2.obj",
+    "singleUnit": false,
+    "role": "Land",
+    "name": "Pikeman"
+  },
+  {
+    "scaleSize": 0.4,
+    "objectFile": "units/riflemen/riflemen02.obj",
+    "singleUnit": false,
+    "role": "Land",
+    "name": "Riflemen"
+  },
+  {
+    "scaleSize": 0.4,
+    "objectFile": "units/settler/settler3.obj",
+    "singleUnit": true,
+    "role": "Land",
+    "name": "Settler"
+  },
+  {
+    "scaleSize": 1.0,
+    "objectFile": "units/stealthbomber/stealth_bomber1.obj",
+    "singleUnit": true,
+    "role": "Air",
+    "name": "StealthBomber"
+  },
+  {
+    "scaleSize": 1.0,
+    "objectFile": "units/stealthfighter/stealthfighter.obj",
+    "singleUnit": true,
+    "role": "Air",
+    "name": "StealthFighter"
+  },
+  {
+    "scaleSize": 1.0,
+    "objectFile": "units/submarine/submarine.obj",
+    "singleUnit": true,
+    "role": "Naval",
+    "name": "Submarine"
+  },
+  {
+    "scaleSize": 1.0,
+    "objectFile": "units/tank/armor.obj",
+    "singleUnit": true,
+    "role": "Land",
+    "name": "Tank"
+  },
+  {
+    "scaleSize": 1.0,
+    "objectFile": "units/transport/transport.obj",
+    "singleUnit": true,
+    "role": "Land",
+    "name": "Transport"
+  },
+  {
+    "scaleSize": 1.0,
+    "objectFile": "units/trimere/trimere02.obj",
+    "singleUnit": true,
+    "role": "Naval",
+    "name": "Trimere"
+  },
+  {
+    "scaleSize": 0.4,
+    "objectFile": "units/warrior/warrior2.obj",
+    "singleUnit": false,
+    "role": "Land",
+    "name": "Warrior"
+  },
+  {
+    "scaleSize": 0.4,
+    "objectFile": "units/worker/worker01.obj",
+    "singleUnit": false,
+    "role": "Land",
+    "name": "Worker"
+  }
+]
