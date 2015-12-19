@@ -1,0 +1,25 @@
+∩╗┐{
+	"title": "Unit Detail",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "properties": {
+      "scaleSize": {
+        "maximum": 1.0,
+        "minimum": 0.0,
+        "type": "number"
+      },
+      "singleUnit": {
+        "type": "boolean"
+      },
+      "objectFile": {
+        "type": "string",
+      },
+      "role": {
+        "enum": [ "NavalRanged", "LandRanged", "Naval", "Air", "Land", "Siege" ]
+      }
+    },
+    "required": [ "singleUnit", "scaleSize", "role", "objectFile" ]
+  }
+}
