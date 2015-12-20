@@ -61,9 +61,8 @@ namespace SimpleCiv.world
 
         public void Draw(OpenGL gl)
         {
-            this.vertexBufferArray.Bind(gl);
             gl.DrawArrays(OpenGL.GL_TRIANGLES, 0, 3 * numTriangles);
-            this.vertexBufferArray.Unbind(gl);
         }
     }
 }
+

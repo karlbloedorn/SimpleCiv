@@ -57,9 +57,7 @@ namespace SimpleCiv.world
 
         public void Draw(OpenGL gl)
         {
-            this.vertexBufferArray.Bind(gl);
             gl.DrawArrays(OpenGL.GL_LINES, 0, numLines * verticesPerLine);
-            this.vertexBufferArray.Unbind(gl);
         }
     }
 }

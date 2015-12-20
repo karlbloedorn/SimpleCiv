@@ -24,7 +24,6 @@ float mydist(){
 	return  distance(pass_Position, Pb);
 }
 
-
 void main(void) {
 	 //distance(pass_Position, vec3(0,0,0));
 	float pos = 1-mydist();
@@ -36,7 +35,7 @@ void main(void) {
 	   //out_Color =  vec4(1.0,1.0,1.0, 0.6);
 
 	} else if(pos > 0.6) {
-		out_Color =  vec4(borderColor, pos/3.0);
+		out_Color =  vec4(borderColor, pos/6.0);
 	} else {
 		out_Color =  vec4(borderColor, 0.0);
 	}
