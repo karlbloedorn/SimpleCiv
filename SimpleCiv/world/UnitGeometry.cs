@@ -26,8 +26,6 @@ namespace SimpleCiv.world
     {
         private UnitDetail details;
 
-        string file;
-        int facesCount = 0;
         public UnitGeometry(UnitDetail unit)
         {
             details = unit;

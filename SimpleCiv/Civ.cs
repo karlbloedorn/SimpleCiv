@@ -44,7 +44,6 @@ namespace SimpleCiv
         private float zoomV = 0.0f;
         private float zoom = 2;
 
-        private float rotateUnit = 0.0f;
         private mat4 projectionMatrix;
         private mat4 viewMatrix;
         private vec3 vel = new vec3(0, 0, 0);
@@ -66,8 +65,6 @@ namespace SimpleCiv
         // units
         private ShaderProgram unitProgram;
         public Dictionary<UnitType, UnitGeometry> unitGeometries = new Dictionary<UnitType, UnitGeometry>();
-        //public Dictionary<UnitType, string> unitFileNames = new Dictionary<UnitType, string>();
-
         public Dictionary<UnitType, UnitDetail> unitTypes = new Dictionary<UnitType, UnitDetail>();
 
         public List<Player> players;
@@ -186,7 +183,7 @@ namespace SimpleCiv
             var unitsConfig = FileLoader.LoadTextFile("assets/config/units.json");
             var unitTypeList = JsonConvert.DeserializeObject<List<UnitDetail>>(unitsConfig);
 
-            int unitLimit = 0;
+            int unitLimit = 5;
             int unitIndex = 0;
             foreach(var unit in unitTypeList)
             {
@@ -492,6 +489,8 @@ namespace SimpleCiv
             if (tileProgram == null || lineProgram == null || unitProgram == null)
                 return;
 
+            var delta = ProcessInput(gl);
+
             gl.ClearColor(0.0f, 0.0f, 0.0f, 1.0f);
             gl.Clear(OpenGL.GL_COLOR_BUFFER_BIT | OpenGL.GL_DEPTH_BUFFER_BIT | OpenGL.GL_STENCIL_BUFFER_BIT);
 
@@ -501,26 +500,16 @@ namespace SimpleCiv
 
             viewMatrix = glm.lookAt(new vec3(pos.x, yOffset, pos.z + zOffset), new vec3(pos.x, 0, pos.z), new vec3(0, 1, 0));
 
+            if (!setup)
+            {
+                Setup(gl);
+            }
+            
             tileProgram.Bind(gl);
             tileProgram.SetUniformMatrix4(gl, "projectionMatrix", projectionMatrix.to_array());
             tileProgram.SetUniformMatrix4(gl, "viewMatrix", viewMatrix.to_array());
 
-            if (!setup)
-            {
-
-                Setup(gl);
-            }
-
-            
-           var delta = ProcessInput(gl);
-            rotateUnit += delta / 700.0f;
-
-            if(rotateUnit > Math.PI * 2)
-            {
-                rotateUnit =  (float)(rotateUnit % (Math.PI * 2));
-            }
-
-
+            tileGeometry.vertexBufferArray.Bind(gl);
             foreach (var curTileType in tileTextures)
             {
              //  uint texUnit = 0;
@@ -548,14 +537,16 @@ namespace SimpleCiv
                     }
                 }
             }
+            tileGeometry.vertexBufferArray.Unbind(gl);
             tileProgram.Unbind(gl);
 
-            
+            // Hex grid lines
             lineProgram.Bind(gl);
             lineProgram.SetUniformMatrix4(gl, "projectionMatrix", projectionMatrix.to_array());
             lineProgram.SetUniformMatrix4(gl, "viewMatrix", viewMatrix.to_array());
             lineProgram.SetUniform3(gl, "lineColor", 1.0f, 1.0f, 1.0f);
             lineProgram.SetUniform1(gl, "lineAlpha", 0.2f);
+            gridGeometry.vertexBufferArray.Bind(gl);
 
             for (int i = 0; i < world.xSize; i++)
             {
@@ -580,8 +571,10 @@ namespace SimpleCiv
                 lineProgram.SetUniformMatrix4(gl, "modelMatrix", activeUnitModel.to_array());
                 gridGeometry.Draw(gl);
             }
-
+            gridGeometry.vertexBufferArray.Unbind(gl);
             lineProgram.Unbind(gl);
+
+
             unitProgram.Bind(gl);
             unitProgram.SetUniformMatrix4(gl, "projectionMatrix", projectionMatrix.to_array());
             unitProgram.SetUniformMatrix4(gl, "viewMatrix", viewMatrix.to_array());
@@ -620,6 +613,7 @@ namespace SimpleCiv
 
            
             borderProgram.Bind(gl);
+            borderGeometry.vertexBufferArray.Bind(gl);
             borderProgram.SetUniformMatrix4(gl, "projectionMatrix", projectionMatrix.to_array());
             borderProgram.SetUniformMatrix4(gl, "viewMatrix", viewMatrix.to_array());
 
@@ -669,6 +663,7 @@ namespace SimpleCiv
                     borderGeometry.Draw(gl,Convert.ToInt32( borderGroup.Key));                   
                 }
             }
+            borderGeometry.vertexBufferArray.Unbind(gl);
             borderProgram.Unbind(gl);
 
             double[] curX = new double[] { 0.0 };

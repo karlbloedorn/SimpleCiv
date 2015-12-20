@@ -59,9 +59,7 @@ namespace SimpleCiv.world
         }
         public void Draw(OpenGL gl, int index)
         {
-            this.vertexBufferArray.Bind(gl);
             gl.DrawArrays(OpenGL.GL_TRIANGLES, index*3, 3);
-            this.vertexBufferArray.Unbind(gl);
         }
     }
 }

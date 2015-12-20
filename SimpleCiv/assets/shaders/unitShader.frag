@@ -10,7 +10,7 @@ uniform vec3 specColor;
 uniform float shininess;
 
 const float screenGamma = 2.2; 
-const vec3 lightPos = vec3(1.0,0.0,0.0);
+const vec3 lightPos = vec3(0.3,1.0,0.0);
 
 void main(void) {
 

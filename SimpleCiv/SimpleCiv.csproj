@@ -109,6 +109,7 @@
     </Compile>
     <Compile Include="world\Border.cs" />
     <Compile Include="world\BorderGeometry.cs" />
+    <Compile Include="world\City.cs" />
     <Compile Include="world\Neighbor.cs" />
     <Compile Include="world\Player.cs" />
     <Compile Include="world\GridGeometry.cs" />
