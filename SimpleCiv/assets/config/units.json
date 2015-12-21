@@ -147,7 +147,7 @@
     {
       "scaleSize": 0.4,
       "objectFile": "units/explorer/explorer01.obj",
-      "singleUnit": false,
+      "singleUnit": true,
       "role": "Land",
       "name": "Explorer",
       "combatStrength": {
@@ -455,4 +455,3 @@
   ],
   "version": "1.0"
 }
->>>>>>> 226ae83241cce67f0cda2e54170654b9e463e12e

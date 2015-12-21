@@ -70,7 +70,6 @@ namespace SimpleCiv
 
         public List<Player> players;
 
-
         public async void loaderThreadFunc()
         {
             await tileGeometry.Load();
@@ -560,19 +559,21 @@ namespace SimpleCiv
                     if (Math.Abs(curTile.centerPos.z - pos.z) < 16 && Math.Abs(curTile.centerPos.x - pos.x) < 16)
                     {
                         if (curTile.currentUnit != null)
-                        unitGeometries[curTile.currentUnit.currentType].Draw(gl, unitProgram, curTile.centerPos);
-
-                        if (!Unit.unitTypes[curTile.currentUnit.currentType].singleUnit)
                         {
                             unitGeometries[curTile.currentUnit.currentType].Draw(gl, unitProgram, curTile.centerPos);
 
                             if (!Unit.unitTypes[curTile.currentUnit.currentType].singleUnit)
                             {
-                                const float offset = 0.3f;
-                                unitGeometries[curTile.currentUnit.currentType].Draw(gl, unitProgram, curTile.centerPos + new vec3(offset, 0, offset));
-                                unitGeometries[curTile.currentUnit.currentType].Draw(gl, unitProgram, curTile.centerPos + new vec3(-offset, 0, offset));
-                                unitGeometries[curTile.currentUnit.currentType].Draw(gl, unitProgram, curTile.centerPos + new vec3(-offset, 0, -offset));
-                                unitGeometries[curTile.currentUnit.currentType].Draw(gl, unitProgram, curTile.centerPos + new vec3(offset, 0, -offset));
+                                unitGeometries[curTile.currentUnit.currentType].Draw(gl, unitProgram, curTile.centerPos);
+
+                                if (!Unit.unitTypes[curTile.currentUnit.currentType].singleUnit)
+                                {
+                                    const float offset = 0.3f;
+                                    unitGeometries[curTile.currentUnit.currentType].Draw(gl, unitProgram, curTile.centerPos + new vec3(offset, 0, offset));
+                                    unitGeometries[curTile.currentUnit.currentType].Draw(gl, unitProgram, curTile.centerPos + new vec3(-offset, 0, offset));
+                                    unitGeometries[curTile.currentUnit.currentType].Draw(gl, unitProgram, curTile.centerPos + new vec3(-offset, 0, -offset));
+                                    unitGeometries[curTile.currentUnit.currentType].Draw(gl, unitProgram, curTile.centerPos + new vec3(offset, 0, -offset));
+                                }
                             }
                         }
                     }
