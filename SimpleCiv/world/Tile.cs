@@ -24,8 +24,9 @@ namespace SimpleCiv.world
     {
         static float s = 1.0f;
         static float r = (float)Math.Cos((Math.PI / 180.0)*30)*s;
-        static float h = (float)Math.Sin((Math.PI / 180.0)*30)*s;
+        public static float h = (float)Math.Sin((Math.PI / 180.0)*30)*s;
         static float m = h / r;
+      
         static float gridWidth = 2 * r;
         static float halfWidth = r;
         static float gridHeight = h + s;
@@ -94,6 +95,7 @@ namespace SimpleCiv.world
         public TileType currentType;
         public Unit currentUnit;
         public Player owner;
+        public City city;
 
         //public List<Tile> neighbors;
         //public Dictionary<Tile, int> neighbors;  // int is the cost of movement to this neighbor.

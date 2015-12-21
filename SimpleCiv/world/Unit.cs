@@ -59,12 +59,13 @@ namespace SimpleCiv.world
     {
         public Tile currentTile;
         public UnitType currentType;
-        public float health = 100;
+        public float health = 1;
+        public Player player;
        
         public static void EvaluateCombat(Unit attacker, Unit defender)
         {
-            attacker.health -= 5;
-            defender.health -= 5;
+            attacker.health -= 0.17f;
+            defender.health -= 0.25f;
 
             Debug.WriteLine("attacker ("+ attacker.currentType.ToString() + ") : " + attacker.health);
             Debug.WriteLine("defender ("+ defender.currentType.ToString() + "): " + defender.health);

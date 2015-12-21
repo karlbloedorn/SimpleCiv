@@ -13,5 +13,9 @@ namespace SimpleCiv.world
         public string name;
 
         public List<City> cities;
+
+        public Player() { 
+            cities = new List<City>();
+        }
     }
 }

@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.overlayControl = new SharpGL.OpenGLControl();
+            this.blMenuContainer = new System.Windows.Forms.Integration.ElementHost();
+            this.bottomLeftMenu1 = new SimpleCiv.views.BottomLeftMenu();
+            this.elementHost3 = new System.Windows.Forms.Integration.ElementHost();
+            this.mainMenu1 = new SimpleCiv.views.MainMenu();
             this.elementHost2 = new System.Windows.Forms.Integration.ElementHost();
             this.bottomRightMenu1 = new SimpleCiv.BottomRightMenu();
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.topMenu1 = new SimpleCiv.TopMenu();
-            this.elementHost3 = new System.Windows.Forms.Integration.ElementHost();
-            this.mainMenu1 = new SimpleCiv.views.MainMenu();
             ((System.ComponentModel.ISupportInitialize)(this.overlayControl)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,31 +57,16 @@
             this.overlayControl.Size = new System.Drawing.Size(837, 469);
             this.overlayControl.TabIndex = 0;
             // 
-            // elementHost2
+            // elementHost4
             // 
-            this.elementHost2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.elementHost2.AutoSize = true;
-            this.elementHost2.Location = new System.Drawing.Point(537, 269);
-            this.elementHost2.Name = "elementHost2";
-            this.elementHost2.Size = new System.Drawing.Size(300, 240);
-            this.elementHost2.TabIndex = 2;
-            this.elementHost2.TabStop = false;
-            this.elementHost2.Text = "elementHost2";
-            this.elementHost2.Child = this.bottomRightMenu1;
-            this.elementHost2.Visible = false;
-            // 
-            // elementHost1
-            // 
-            this.elementHost1.AutoSize = true;
-            this.elementHost1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.elementHost1.Location = new System.Drawing.Point(0, 0);
-            this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Size = new System.Drawing.Size(837, 28);
-            this.elementHost1.TabIndex = 1;
-            this.elementHost1.TabStop = false;
-            this.elementHost1.Text = "elementHost1";
-            this.elementHost1.Child = this.topMenu1;
-            this.elementHost1.Visible = false;
+            this.blMenuContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.blMenuContainer.Location = new System.Drawing.Point(0, 269);
+            this.blMenuContainer.Name = "elementHost4";
+            this.blMenuContainer.Size = new System.Drawing.Size(200, 200);
+            this.blMenuContainer.TabIndex = 4;
+            this.blMenuContainer.Text = "elementHost4";
+            this.blMenuContainer.Visible = false;
+            this.blMenuContainer.Child = this.bottomLeftMenu1;
             // 
             // elementHost3
             // 
@@ -91,12 +78,39 @@
             this.elementHost3.Text = "elementHost3";
             this.elementHost3.Child = this.mainMenu1;
             // 
+            // elementHost2
+            // 
+            this.elementHost2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.elementHost2.AutoSize = true;
+            this.elementHost2.Location = new System.Drawing.Point(537, 269);
+            this.elementHost2.Name = "elementHost2";
+            this.elementHost2.Size = new System.Drawing.Size(300, 240);
+            this.elementHost2.TabIndex = 2;
+            this.elementHost2.TabStop = false;
+            this.elementHost2.Text = "elementHost2";
+            this.elementHost2.Visible = false;
+            this.elementHost2.Child = this.bottomRightMenu1;
+            // 
+            // elementHost1
+            // 
+            this.elementHost1.AutoSize = true;
+            this.elementHost1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.elementHost1.Location = new System.Drawing.Point(0, 0);
+            this.elementHost1.Name = "elementHost1";
+            this.elementHost1.Size = new System.Drawing.Size(837, 28);
+            this.elementHost1.TabIndex = 1;
+            this.elementHost1.TabStop = false;
+            this.elementHost1.Text = "elementHost1";
+            this.elementHost1.Visible = false;
+            this.elementHost1.Child = this.topMenu1;
+            // 
             // Civ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(837, 469);
+            this.Controls.Add(this.blMenuContainer);
             this.Controls.Add(this.elementHost3);
             this.Controls.Add(this.elementHost2);
             this.Controls.Add(this.elementHost1);
@@ -119,6 +133,8 @@
         private BottomRightMenu bottomRightMenu1;
         private System.Windows.Forms.Integration.ElementHost elementHost3;
         private views.MainMenu mainMenu1;
+        private System.Windows.Forms.Integration.ElementHost blMenuContainer;
+        private views.BottomLeftMenu bottomLeftMenu1;
     }
 }
 

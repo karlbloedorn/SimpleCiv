@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="SimpleCiv.views.BottomLeftMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SimpleCiv.views"
+             mc:Ignorable="d" 
+             Background="Black"
+             d:DesignHeight="200" d:DesignWidth="200">
+
+    <UserControl.Resources>
+        <FontFamily x:Key="fontawesome" >/assets/fonts/#FontAwesome</FontFamily>
+        <FontFamily x:Key="roboto" >/assets/fonts/#Roboto</FontFamily>
+    </UserControl.Resources>
+    
+    <Grid>
+        <StackPanel Orientation="Vertical" Background="#1a1a1a"  Grid.Row="1" Grid.Column="1" Height="200" Width="200">
+
+            <TextBlock x:Name="UnitType" Text="Settler" Foreground="White" TextAlignment="Left" HorizontalAlignment="Left" Margin="20,20,0,0" Width="150" FontSize="20" FontFamily="{StaticResource roboto}" />
+
+            <Border Margin="20,5,15,5" x:Name="BuildCityButtonContainer" HorizontalAlignment="Left" Width="150" BorderThickness="2" BorderBrush="White">
+                <TextBlock x:Name="BuildCityButton" Text="Build City" Foreground="White" TextAlignment="Center"  Width="150" FontSize="15" FontFamily="{StaticResource roboto}" >
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Cursor" Value="Hand" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </Border>
+            <Border Margin="20,5,15,5"  x:Name="MoveButtonContainer"  HorizontalAlignment="Left" Width="150" BorderThickness="2" BorderBrush="White">
+                <TextBlock x:Name="MoveButton" Text="Move" Foreground="White" TextAlignment="Center"  Width="150" FontSize="15" FontFamily="{StaticResource roboto}" >
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Cursor" Value="Hand" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </Border>
+        </StackPanel>
+    </Grid>
+</UserControl>
