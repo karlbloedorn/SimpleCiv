@@ -1,25 +1,44 @@
 {
-	"title": "Unit Detail",
-  "type": "array",
-  "minItems": 1,
-  "items": {
-    "type": "object",
-    "properties": {
-      "scaleSize": {
-        "maximum": 1.0,
-        "minimum": 0.0,
-        "type": "number"
-      },
-      "singleUnit": {
-        "type": "boolean"
-      },
-      "objectFile": {
-        "type": "string",
-      },
-      "role": {
-        "enum": [ "NavalRanged", "LandRanged", "Naval", "Air", "Land", "Siege" ]
+	"$schema": "http://json-schema.org/draft-04/schema",
+  "title": "Unit Detail",
+  "type": "object",
+  "properties": {
+    "units": {
+      "type": "array",
+      "minItems": 1, 
+      "items": {
+        "type": "object",
+        "properties": {
+          "scaleSize": {
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "type": "number"
+          },
+          "singleUnit": {
+            "type": "boolean"
+          },
+          "objectFile": {
+            "type": "string",
+          },
+          "combatStrength": {
+            "type": "object",
+            "properties": {
+              "defensive": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "offensive": {
+                "minimum": 0,
+                "type": "integer"
+              }
+            }
+          },
+          "role": {
+            "enum": [ "NavalRanged", "LandRanged", "Naval", "Air", "Land", "Siege" ]
+          }
+        },
+        "required": [ "singleUnit", "scaleSize", "role", "objectFile", "combatStrength" ]
       }
-    },
-    "required": [ "singleUnit", "scaleSize", "role", "objectFile" ]
+    }
   }
 }
