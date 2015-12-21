@@ -63,7 +63,7 @@ namespace SimpleCiv
         public Dictionary<UnitType, UnitGeometry> unitGeometries = new Dictionary<UnitType, UnitGeometry>();
         //public Dictionary<UnitType, string> unitFileNames = new Dictionary<UnitType, string>();
 
-        public Dictionary<UnitType, UnitDetail> unitTypes = new Dictionary<UnitType, UnitDetail>();
+       
 
         public List<Player> players;
 
@@ -77,7 +77,7 @@ namespace SimpleCiv
             await borderGeometry.Load();
 
             int cur = 1;
-            int total = unitTypes.Count();
+            int total = Unit.unitTypes.Count();
 
             var opts = new ParallelOptions
             {
@@ -91,7 +91,7 @@ namespace SimpleCiv
                 mainMenu1.LoadProgress.Width = 0;
             });
 
-            Parallel.ForEach(unitTypes, opts, (unit) =>
+            Parallel.ForEach(Unit.unitTypes, opts, (unit) =>
             {
                  var unitGeometry = new UnitGeometry(unit.Value);
                  unitGeometry.Load().Wait();
@@ -173,24 +173,24 @@ namespace SimpleCiv
             tileTextureNames.Add(TileType.Mountain, "mountain.bmp");
 
             var unitsConfig = FileLoader.LoadTextFile("assets/config/units.json");
-            var unitTypeList = JsonConvert.DeserializeObject<List<UnitDetail>>(unitsConfig);
+            var unitTypeList = JsonConvert.DeserializeObject<UnitConfig>(unitsConfig);
 
             int unitLimit = 0;
             int unitIndex = 0;
-            foreach(var unit in unitTypeList)
+            foreach(var unit in unitTypeList.units)
             {
                 if(unitLimit != 0 && unitIndex > unitLimit)
                 {
                     break;
                 }
 
-                unitTypes.Add(unit.name, unit);
+                Unit.unitTypes.Add(unit.name, unit);
                 unitIndex++;
             }                            
          
             var aa = 0;
             var yy = 0;
-            foreach (var unit in unitTypes)
+            foreach (var unit in Unit.unitTypes)
             {
                 var curUnit = new Unit();
                 curUnit.currentType = unit.Key;
@@ -582,7 +582,7 @@ namespace SimpleCiv
                     {
                         unitGeometries[curTile.currentUnit.currentType].Draw(gl, unitProgram, curTile.centerPos);
 
-                        if (!unitTypes[curTile.currentUnit.currentType].singleUnit)
+                        if (!Unit.unitTypes[curTile.currentUnit.currentType].singleUnit)
                         {
                             const float offset = 0.3f;
                             unitGeometries[curTile.currentUnit.currentType].Draw(gl, unitProgram, curTile.centerPos + new vec3(offset, 0, offset));

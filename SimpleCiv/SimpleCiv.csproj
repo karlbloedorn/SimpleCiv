@@ -112,6 +112,7 @@
     <Compile Include="world\Tile.cs" />
     <Compile Include="world\TileGeometry.cs" />
     <Compile Include="world\Unit.cs" />
+    <Compile Include="world\UnitConfig.cs" />
     <Compile Include="world\UnitDetail.cs" />
     <Compile Include="world\UnitGeometry.cs" />
     <Compile Include="world\World.cs" />

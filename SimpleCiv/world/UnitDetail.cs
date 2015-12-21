@@ -18,6 +18,12 @@ namespace SimpleCiv.world
         Naval,
     }
 
+    public class CombatStrength
+    {
+        public int offensive { get; set; }
+        public int defensive { get; set; }
+    }
+
     public class UnitDetail
     {
         [JsonConverter(typeof(StringEnumConverter)), JsonRequired]
@@ -36,6 +42,12 @@ namespace SimpleCiv.world
         }
         [JsonRequired]
         public bool singleUnit
+        {
+            get; set;
+        }
+
+        [JsonRequired]
+        public CombatStrength combatStrength
         {
             get; set;
         }
