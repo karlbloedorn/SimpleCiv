@@ -67,7 +67,6 @@ namespace SimpleCiv
         // units
         private ShaderProgram unitProgram;
         public Dictionary<UnitType, UnitGeometry> unitGeometries = new Dictionary<UnitType, UnitGeometry>();
-        public Dictionary<UnitType, UnitDetail> unitTypes = new Dictionary<UnitType, UnitDetail>();
 
         public List<Player> players;
 
@@ -79,7 +78,7 @@ namespace SimpleCiv
             await borderGeometry.Load();
 
             int cur = 1;
-            int total = unitTypes.Count();
+            int total = Unit.unitTypes.Count();
 
             var opts = new ParallelOptions
             {
@@ -93,7 +92,7 @@ namespace SimpleCiv
                 mainMenu1.LoadProgress.Width = 0;
             });
 
-            Parallel.ForEach(unitTypes, opts, (unit) =>
+            Parallel.ForEach(Unit.unitTypes, opts, (unit) =>
             {
                  var unitGeometry = new UnitGeometry(unit.Value);
                  unitGeometry.Load().Wait();
@@ -166,17 +165,6 @@ namespace SimpleCiv
         {
             var gl = overlayControl.OpenGL;
 
-            while (true)
-            {
-
-                var error = gl.GetError();
-                if (error == OpenGL.GL_NO_ERROR)
-                {
-                    break;
-                }
-               // Debug.WriteLine("" + gl.GetErrorDescription(error));
-            }
-
             int worldSize = 100;
             world = new World(worldSize, worldSize);
             tileGeometry = new TileGeometry();
@@ -189,18 +177,6 @@ namespace SimpleCiv
             player1.borderColor = System.Drawing.Color.Crimson;
             players.Add(player1);
 
-            /*
-            var player2 = new Player();
-            player2.name = "England";
-            player2.borderColor = System.Drawing.Color.Yellow;
-            players.Add(player2);
-                        
-            var city = new City();
-            city.location = world.tiles[5, 5];
-            city.name = "London";
-            city.location.city = city;
-            player2.cities.Add(city);*/
-
             world.UpdateBorders();
             tileTextureNames.Add(TileType.Grass, "grass.bmp");
             tileTextureNames.Add(TileType.Water, "water.bmp");
@@ -210,28 +186,20 @@ namespace SimpleCiv
             tileTextureNames.Add(TileType.Mountain, "mountain.bmp");
 
             var unitsConfig = FileLoader.LoadTextFile("assets/config/units.json");
-            var unitTypeList = JsonConvert.DeserializeObject<List<UnitDetail>>(unitsConfig);
+            var unitTypeList = JsonConvert.DeserializeObject<UnitConfig>(unitsConfig);
 
             int unitLimit = 1;
             int unitIndex = 0;
-            foreach(var unit in unitTypeList)
+            foreach(var unit in unitTypeList.units)
             {
                 if(unitLimit != 0 && unitIndex > unitLimit && !(unit.name == UnitType.Settler || unit.name == UnitType.Worker || unit.name == UnitType.Explorer))
                 {
                     continue;
                 }
-                if (unit.moveSound != null)
-                {
-                    moveSounds.Add(unit.name, fmod.CreateSound("assets/sounds/" + unit.moveSound, flags));
-                }
-                if (unit.attackSound != null)
-                {
-                    attackSounds.Add(unit.name, fmod.CreateSound("assets/sounds/" + unit.attackSound, flags));
-                }
-                unitTypes.Add(unit.name, unit);
+                Unit.unitTypes.Add(unit.name, unit);
                 unitIndex++;
-            }
-
+            }                            
+         
             var curUnit = new Unit();
             curUnit.currentType = UnitType.Settler;
             curUnit.currentTile = world.tiles[5, 5];
@@ -592,10 +560,13 @@ namespace SimpleCiv
                     if (Math.Abs(curTile.centerPos.z - pos.z) < 16 && Math.Abs(curTile.centerPos.x - pos.x) < 16)
                     {
                         if (curTile.currentUnit != null)
+                        unitGeometries[curTile.currentUnit.currentType].Draw(gl, unitProgram, curTile.centerPos);
+
+                        if (!Unit.unitTypes[curTile.currentUnit.currentType].singleUnit)
                         {
                             unitGeometries[curTile.currentUnit.currentType].Draw(gl, unitProgram, curTile.centerPos);
 
-                            if (!unitTypes[curTile.currentUnit.currentType].singleUnit)
+                            if (!Unit.unitTypes[curTile.currentUnit.currentType].singleUnit)
                             {
                                 const float offset = 0.3f;
                                 unitGeometries[curTile.currentUnit.currentType].Draw(gl, unitProgram, curTile.centerPos + new vec3(offset, 0, offset));
