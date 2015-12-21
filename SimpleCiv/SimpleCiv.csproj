@@ -90,6 +90,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="helpers\FileLoader.cs" />
+    <Compile Include="views\BottomLeftMenu.xaml.cs">
+      <DependentUpon>BottomLeftMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="views\BottomRightMenu.xaml.cs">
       <DependentUpon>BottomRightMenu.xaml</DependentUpon>
     </Compile>
@@ -206,6 +209,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="views\BottomLeftMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="views\BottomRightMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
