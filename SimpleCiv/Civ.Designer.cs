@@ -31,11 +31,11 @@
             this.overlayControl = new SharpGL.OpenGLControl();
             this.blMenuContainer = new System.Windows.Forms.Integration.ElementHost();
             this.bottomLeftMenu1 = new SimpleCiv.views.BottomLeftMenu();
-            this.elementHost3 = new System.Windows.Forms.Integration.ElementHost();
-            this.mainMenu1 = new SimpleCiv.views.MainMenu();
-            this.elementHost2 = new System.Windows.Forms.Integration.ElementHost();
+            this.mainMenuContainer = new System.Windows.Forms.Integration.ElementHost();
+            this.mainMenu = new SimpleCiv.views.MainMenu();
+            this.bottomRightMenuContainer = new System.Windows.Forms.Integration.ElementHost();
             this.bottomRightMenu1 = new SimpleCiv.BottomRightMenu();
-            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
+            this.topMenuContainer = new System.Windows.Forms.Integration.ElementHost();
             this.topMenu1 = new SimpleCiv.TopMenu();
             ((System.ComponentModel.ISupportInitialize)(this.overlayControl)).BeginInit();
             this.SuspendLayout();
@@ -70,39 +70,39 @@
             // 
             // elementHost3
             // 
-            this.elementHost3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.elementHost3.Location = new System.Drawing.Point(0, 28);
-            this.elementHost3.Name = "elementHost3";
-            this.elementHost3.Size = new System.Drawing.Size(837, 441);
-            this.elementHost3.TabIndex = 3;
-            this.elementHost3.Text = "elementHost3";
-            this.elementHost3.Child = this.mainMenu1;
+            this.mainMenuContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainMenuContainer.Location = new System.Drawing.Point(0, 28);
+            this.mainMenuContainer.Name = "elementHost3";
+            this.mainMenuContainer.Size = new System.Drawing.Size(837, 441);
+            this.mainMenuContainer.TabIndex = 3;
+            this.mainMenuContainer.Text = "elementHost3";
+            this.mainMenuContainer.Child = this.mainMenu;
             // 
             // elementHost2
             // 
-            this.elementHost2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.elementHost2.AutoSize = true;
-            this.elementHost2.Location = new System.Drawing.Point(537, 269);
-            this.elementHost2.Name = "elementHost2";
-            this.elementHost2.Size = new System.Drawing.Size(300, 240);
-            this.elementHost2.TabIndex = 2;
-            this.elementHost2.TabStop = false;
-            this.elementHost2.Text = "elementHost2";
-            this.elementHost2.Visible = false;
-            this.elementHost2.Child = this.bottomRightMenu1;
+            this.bottomRightMenuContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bottomRightMenuContainer.AutoSize = true;
+            this.bottomRightMenuContainer.Location = new System.Drawing.Point(537, 269);
+            this.bottomRightMenuContainer.Name = "elementHost2";
+            this.bottomRightMenuContainer.Size = new System.Drawing.Size(300, 240);
+            this.bottomRightMenuContainer.TabIndex = 2;
+            this.bottomRightMenuContainer.TabStop = false;
+            this.bottomRightMenuContainer.Text = "elementHost2";
+            this.bottomRightMenuContainer.Visible = false;
+            this.bottomRightMenuContainer.Child = this.bottomRightMenu1;
             // 
             // elementHost1
             // 
-            this.elementHost1.AutoSize = true;
-            this.elementHost1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.elementHost1.Location = new System.Drawing.Point(0, 0);
-            this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Size = new System.Drawing.Size(837, 28);
-            this.elementHost1.TabIndex = 1;
-            this.elementHost1.TabStop = false;
-            this.elementHost1.Text = "elementHost1";
-            this.elementHost1.Visible = false;
-            this.elementHost1.Child = this.topMenu1;
+            this.topMenuContainer.AutoSize = true;
+            this.topMenuContainer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topMenuContainer.Location = new System.Drawing.Point(0, 0);
+            this.topMenuContainer.Name = "elementHost1";
+            this.topMenuContainer.Size = new System.Drawing.Size(837, 28);
+            this.topMenuContainer.TabIndex = 1;
+            this.topMenuContainer.TabStop = false;
+            this.topMenuContainer.Text = "elementHost1";
+            this.topMenuContainer.Visible = false;
+            this.topMenuContainer.Child = this.topMenu1;
             // 
             // Civ
             // 
@@ -111,9 +111,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(837, 469);
             this.Controls.Add(this.blMenuContainer);
-            this.Controls.Add(this.elementHost3);
-            this.Controls.Add(this.elementHost2);
-            this.Controls.Add(this.elementHost1);
+            this.Controls.Add(this.mainMenuContainer);
+            this.Controls.Add(this.bottomRightMenuContainer);
+            this.Controls.Add(this.topMenuContainer);
             this.Controls.Add(this.overlayControl);
             this.Name = "Civ";
             this.Text = "Simple Civ";
@@ -126,13 +126,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Integration.ElementHost elementHost1;
+        private System.Windows.Forms.Integration.ElementHost topMenuContainer;
         private TopMenu topMenu1;
         private SharpGL.OpenGLControl overlayControl;
-        private System.Windows.Forms.Integration.ElementHost elementHost2;
+        private System.Windows.Forms.Integration.ElementHost bottomRightMenuContainer;
         private BottomRightMenu bottomRightMenu1;
-        private System.Windows.Forms.Integration.ElementHost elementHost3;
-        private views.MainMenu mainMenu1;
+        private System.Windows.Forms.Integration.ElementHost mainMenuContainer;
+        private views.MainMenu mainMenu;
         private System.Windows.Forms.Integration.ElementHost blMenuContainer;
         private views.BottomLeftMenu bottomLeftMenu1;
     }
